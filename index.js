@@ -14,15 +14,11 @@ app.use(bodyParser.json())
 //PUT actualizar
 //DELETE eliminar
 
-/*
-app.get('/hola/:name', (req, res) => {
-  res.send( {messagge: `Hola ${req.params.name}` } )
-})
-*/
+
 //INICIO API RESTFUL
 
 app.get('/api/producto', (req, res) => {
-  res.send(200, {productos: []})
+  res.status(200).send({productos: []})
 })
 
 app.get('/api/producto/:id', (req, res) => {
@@ -31,7 +27,7 @@ app.get('/api/producto/:id', (req, res) => {
 
 app.post('/api/producto', (req, res) => {
   console.log(req.body)
-  res.send(200, {mensaje:'Producto insertado correctamente'})
+  res.status(200).send({mensaje:'Producto insertado correctamente'})
 })
 
 app.put('/api/producto/:id', (req, res) => {
